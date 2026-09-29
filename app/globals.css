@@ -1,0 +1,2873 @@
+
+:root{
+    --forest:#173f38;
+    --forest-dark:#0d2c27;
+    --forest-light:#28584e;
+
+    --cream:#f5f1e8;
+    --cream-light:#fbf9f4;
+
+    --sage:#dce6dc;
+
+    --terracotta:#c96d4d;
+    --terracotta-dark:#a95439;
+
+    --gold:#d5a84d;
+    --gold-light:#e5c878;
+
+    --charcoal:#202824;
+    --text:#303a35;
+    --muted:#68736d;
+
+    --white:#ffffff;
+
+    --shadow:0 15px 40px rgba(13,44,39,.12);
+    --shadow-large:0 25px 60px rgba(13,44,39,.18);
+
+    --radius:18px;
+}
+
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+    margin:0;
+    padding:0;
+
+    overflow-x:hidden;
+
+    background:var(--cream);
+
+    color:var(--text);
+
+    font-family:"Open Sans",Arial,sans-serif;
+
+    -webkit-font-smoothing:antialiased;
+}
+
+
+img{
+    display:block;
+    max-width:100%;
+    height:auto;
+}
+
+
+iframe{
+    max-width:100%;
+}
+
+
+a{
+    transition:
+        color .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+button,
+input{
+    font-family:inherit;
+}
+
+
+.container{
+    width:calc(100% - 80px);
+    max-width:1280px;
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+.wrapper{
+    position:relative;
+}
+
+
+/* =========================================================
+   02. HEADER
+   ========================================================= */
+
+#header{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:28px 0;
+
+    z-index:100;
+}
+
+
+#header .container{
+    width:calc(100% - 80px);
+    max-width:1400px;
+}
+
+
+.main-head{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:35px;
+}
+
+
+.logo{
+    display:flex;
+
+    align-items:center;
+
+    margin:0;
+
+    flex-shrink:0;
+}
+
+
+.logo-11{
+    display:inline-block;
+
+    text-decoration:none;
+}
+
+
+.logo-1{
+    display:block;
+
+    width:auto;
+    max-width:175px;
+
+    height:auto;
+}
+
+
+/* Navigation */
+
+.nav{
+    display:flex;
+
+    align-items:center;
+    justify-content:flex-end;
+
+    gap:25px;
+}
+
+
+.nav-a{
+    display:flex;
+
+    align-items:center;
+
+    gap:4px;
+
+    margin:0;
+    padding:0;
+
+    list-style:none;
+}
+
+
+.hike{
+    margin:0;
+    padding:0;
+}
+
+
+.nev{
+    display:inline-block;
+
+    padding:9px 12px;
+
+    color:rgba(255,255,255,.95);
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:.04em;
+
+    border:1px solid transparent;
+
+    border-radius:50px;
+}
+
+
+.nev:hover{
+    color:var(--white);
+
+    background:rgba(255,255,255,.12);
+
+    border-color:rgba(255,255,255,.22);
+
+    transform:translateY(-1px);
+}
+
+
+/* Header Search */
+
+.forms{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    min-width:145px;
+
+    padding:8px 14px;
+
+    background:rgba(255,255,255,.96);
+
+    border:1px solid rgba(255,255,255,.7);
+
+    border-radius:50px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+
+.img{
+    display:flex;
+
+    align-items:center;
+}
+
+
+.img-1{
+    width:15px;
+    height:15px;
+
+    object-fit:contain;
+}
+
+
+.search-engine{
+    display:flex;
+
+    width:100%;
+}
+
+
+.search-bar{
+    width:100%;
+
+    padding:0;
+
+    border:0;
+    outline:0;
+
+    background:transparent;
+
+    color:var(--charcoal);
+
+    font-size:13px;
+}
+
+
+.search-bar::placeholder{
+    color:#777d79;
+}
+
+
+/* =========================================================
+   03. FULL SCREEN HERO
+   ========================================================= */
+
+#banner{
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+    min-height:100svh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:120px 0 70px;
+
+    overflow:hidden;
+
+    background-image:url(/images/banner1.jpg);
+
+    background-position:center center;
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+}
+
+
+/* Main overlay */
+
+#banner::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(9,38,33,.52) 0%,
+            rgba(9,38,33,.20) 48%,
+            rgba(9,38,33,.38) 100%
+        );
+
+    z-index:0;
+}
+
+
+/* Bottom fade */
+
+#banner::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:150px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(13,44,39,.55)
+        );
+
+    z-index:0;
+
+    pointer-events:none;
+}
+
+
+#banner .container{
+    position:relative;
+
+    z-index:2;
+
+    width:calc(100% - 80px);
+
+    max-width:1400px;
+
+    height:100%;
+}
+
+
+.parent-div{
+    position:relative;
+
+    min-height:calc(100vh - 190px);
+
+    display:grid;
+
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+
+    align-items:center;
+
+    gap:75px;
+}
+
+
+/* =========================================================
+   HERO — LEFT
+   ========================================================= */
+
+.left-div{
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding-top:30px;
+}
+
+
+.main-div{
+    position:relative;
+
+    width:min(450px,100%);
+
+    padding:30px 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,57,50,.60),
+            rgba(13,44,39,.40)
+        );
+
+    border:1px solid rgba(255,255,255,.30);
+
+    border-radius:22px;
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.15);
+
+    transform:translateY(15px);
+}
+
+
+.main-div::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:50%;
+
+    width:60px;
+    height:3px;
+
+    background:var(--gold);
+
+    border-radius:10px;
+
+    transform:translateX(-50%);
+}
+
+
+.left-div-img{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+}
+
+
+.stars{
+    width:145px;
+    max-width:100%;
+
+    margin:0 auto 22px;
+}
+
+
+.leftside-para{
+    width:100%;
+}
+
+
+.left-para{
+    max-width:380px;
+
+    margin:0 auto 18px;
+
+    color:rgba(255,255,255,.95);
+
+    text-align:center;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    font-weight:400;
+}
+
+
+.left-bottom{
+    display:block;
+
+    color:rgba(255,255,255,.72);
+
+    text-align:center;
+
+    font-size:12px;
+
+    letter-spacing:.06em;
+}
+
+
+/* =========================================================
+   HERO — RIGHT
+   ========================================================= */
+
+.right-divs{
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding-top:20px;
+}
+
+
+.right-upper{
+    position:relative;
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin:0;
+}
+
+
+.right-para{
+    position:relative;
+
+    z-index:3;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+
+/* Main Hero Heading */
+
+.heading{
+    position:relative;
+
+    z-index:10;
+
+    margin:0;
+
+    color:#ffffff;
+
+    font-family:"Fjalla One","Open Sans",sans-serif;
+
+    font-size:clamp(58px,6.2vw,96px);
+
+    font-weight:400;
+
+    line-height:.95;
+
+    letter-spacing:.01em;
+
+    white-space:nowrap;
+
+    text-shadow:
+        0 4px 18px rgba(0,0,0,.18);
+}
+
+
+/* Worry Less */
+
+.wl{
+    position:relative;
+
+    z-index:10;
+
+    display:block;
+
+    margin:14px 0 0;
+
+    color:#ffffff;
+
+    font-family:"Abril Fatface",Georgia,serif;
+
+    font-size:clamp(32px,3.5vw,54px);
+
+    font-weight:400;
+
+    line-height:1;
+
+    text-shadow:
+        0 4px 18px rgba(0,0,0,.18);
+}
+
+
+/* Mountain graphic */
+
+.right-div-img{
+    position:relative;
+
+    z-index:3;
+
+    width:100%;
+
+    max-width:560px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:35px auto 25px;
+
+    opacity:.92;
+
+    pointer-events:none;
+}
+
+
+.mountains{
+    position:relative;
+
+    display:block;
+
+    width:100%;
+
+    max-width:100%;
+
+    height:auto;
+
+    object-fit:contain;
+}
+
+
+/* Hero Text */
+
+.rightside-down{
+    position:relative;
+
+    z-index:10;
+
+    width:min(650px,100%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin:0 auto;
+}
+
+
+.txt{
+    width:100%;
+
+    margin:0 auto 28px;
+
+    color:#ffffff;
+
+    text-align:center;
+
+    font-size:15px;
+
+    line-height:1.75;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.20);
+}
+
+
+/* Hero Button */
+
+.btn{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+}
+
+
+.button23{
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    min-width:155px;
+
+    padding:13px 27px;
+
+    color:var(--forest-dark);
+
+    background:var(--white);
+
+    border:1px solid var(--white);
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.1em;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.18);
+}
+
+
+.button23:hover{
+    color:var(--forest-dark);
+
+    background:var(--gold);
+
+    border-color:var(--gold);
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 16px 35px rgba(0,0,0,.24);
+}
+
+
+/* =========================================================
+   04. STATISTICS SECTION
+   ========================================================= */
+
+#banner-1{
+    position:relative;
+
+    padding:105px 0 100px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--forest-dark),
+            var(--forest)
+        );
+}
+
+
+.banner-1{
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+#banner-1 .headings{
+    width:min(1000px,100%);
+}
+
+
+.routes{
+    margin:0;
+
+    color:var(--white);
+
+    text-align:center;
+
+    font-family:"Abril Fatface",Georgia,serif;
+
+    font-size:clamp(34px,4vw,58px);
+
+    font-weight:400;
+
+    line-height:1.2;
+
+    letter-spacing:.01em;
+}
+
+
+.image-black2{
+    margin:-10px 0 -55px;
+
+    opacity:.13;
+}
+
+
+.black-color{
+    width:350px;
+
+    max-width:100%;
+}
+
+
+.para-banner1{
+    width:min(650px,100%);
+}
+
+
+.p-banner1{
+    margin:0;
+
+    color:rgba(255,255,255,.74);
+
+    text-align:center;
+
+    font-size:15px;
+
+    line-height:1.85;
+}
+
+
+.image-balck{
+    display:none;
+}
+
+
+/* =========================================================
+   05. CHOOSE YOUR LEVEL
+   ========================================================= */
+
+#banner-2{
+    position:relative;
+
+    padding:95px 0 120px;
+
+    overflow:hidden;
+
+    background-image:url(/images/banner-3.jpg);
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+}
+
+
+#banner-2::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(248,244,236,.82);
+}
+
+
+#banner-2 .container{
+    position:relative;
+
+    z-index:1;
+}
+
+
+.choose{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:48px;
+}
+
+
+.level{
+    position:relative;
+
+    margin:0;
+
+    color:var(--forest);
+
+    text-align:center;
+
+    font-family:"Abril Fatface",Georgia,serif;
+
+    font-size:clamp(36px,4vw,52px);
+
+    font-weight:400;
+}
+
+
+.level::after{
+    content:"";
+
+    display:block;
+
+    width:55px;
+    height:3px;
+
+    margin:15px auto 0;
+
+    background:var(--terracotta);
+
+    border-radius:5px;
+}
+
+
+.columms{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:28px;
+}
+
+
+.columm-1{
+    width:calc(33.333% - 19px);
+
+    padding:32px 28px;
+
+    background:rgba(255,255,255,.86);
+
+    border:1px solid rgba(23,63,56,.10);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.columm-1:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 25px 50px rgba(23,63,56,.16);
+}
+
+
+.h-col1{
+    margin-bottom:20px;
+
+    padding-bottom:16px;
+
+    border-bottom:1px solid rgba(23,63,56,.13);
+}
+
+
+.beginn{
+    margin:0;
+
+    color:var(--forest);
+
+    text-align:center;
+
+    font-size:25px;
+
+    font-weight:700;
+}
+
+
+.p-col1{
+    min-height:100px;
+
+    margin-bottom:25px;
+}
+
+
+.col-1{
+    margin:0;
+
+    color:var(--muted);
+
+    text-align:center;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+.btn-col1{
+    display:flex;
+
+    justify-content:center;
+}
+
+
+.lm{
+    display:inline-block;
+
+    padding:9px 21px;
+
+    color:var(--forest);
+
+    border:1px solid var(--forest);
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+}
+
+
+.lm:hover{
+    color:var(--white);
+
+    background:var(--forest);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   06. FIND YOUR TRAIL
+   ========================================================= */
+
+#banner-3{
+    padding:90px 0;
+
+    background-image:url(/images/banner-4.jpg);
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+}
+
+
+.hiking{
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:35px;
+}
+
+
+.hike-route{
+    margin:0;
+
+    color:var(--forest);
+
+    text-align:center;
+
+    font-family:"Abril Fatface",Georgia,serif;
+
+    font-size:clamp(38px,4.5vw,56px);
+
+    font-weight:400;
+}
+
+
+.hike-route::after{
+    content:"";
+
+    display:block;
+
+    width:50px;
+    height:3px;
+
+    margin:14px auto 0;
+
+    background:var(--terracotta);
+
+    border-radius:5px;
+}
+
+
+.border{
+    width:100%;
+
+    min-height:390px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+
+    margin-bottom:35px;
+
+    border:1px solid rgba(201,109,77,.45);
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.24);
+
+    box-shadow:
+        inset 0 0 60px rgba(255,255,255,.18);
+}
+
+
+.form{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    width:min(470px,100%);
+
+    padding:10px 16px;
+
+    background:var(--terracotta);
+
+    border-radius:50px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.14);
+}
+
+
+.img1{
+    display:flex;
+
+    align-items:center;
+}
+
+
+.img-2{
+    width:16px;
+    height:16px;
+
+    object-fit:contain;
+
+    filter:brightness(0) invert(1);
+}
+
+
+.search{
+    width:100%;
+}
+
+
+.search-bar2{
+    width:100%;
+
+    padding:5px 10px;
+
+    border:0;
+    outline:0;
+
+    background:transparent;
+
+    color:var(--white);
+
+    font-size:14px;
+}
+
+
+.search-bar2::placeholder{
+    color:rgba(255,255,255,.85);
+}
+
+
+.para-last{
+    width:min(680px,100%);
+
+    margin:0 auto;
+}
+
+
+.p-l{
+    margin:0;
+
+    color:var(--forest);
+
+    text-align:center;
+
+    font-size:15px;
+
+    line-height:1.85;
+}
+
+
+/* =========================================================
+   07. OUR JOURNEY
+   ========================================================= */
+
+#banner-4{
+    padding:95px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e6eee4,
+            var(--sage)
+        );
+}
+
+
+.head-para{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+
+.head-span{
+    text-align:center;
+}
+
+
+.our{
+    margin:0;
+
+    color:var(--forest);
+
+    font-family:"Abril Fatface",Georgia,serif;
+
+    font-size:clamp(40px,5vw,58px);
+
+    font-weight:400;
+}
+
+
+.jour{
+    color:var(--terracotta);
+
+    font-family:"Abril Fatface",Georgia,serif;
+}
+
+
+.para-2last{
+    width:min(850px,100%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin:0 auto;
+}
+
+
+.last2{
+    max-width:760px;
+
+    margin:25px auto 35px;
+
+    color:var(--muted);
+
+    text-align:center;
+
+    font-size:15px;
+
+    line-height:1.9;
+}
+
+
+#banner-4 .headings{
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:80px;
+}
+
+
+#banner-4 .h1{
+    margin:0;
+
+    color:var(--forest);
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+
+#banner-4 .h1::before{
+    content:"";
+
+    display:inline-block;
+
+    width:7px;
+    height:7px;
+
+    margin-right:8px;
+
+    vertical-align:middle;
+
+    background:var(--terracotta);
+
+    border-radius:50%;
+}
+
+
+/* =========================================================
+   08. FEATURED ROUTES
+   ========================================================= */
+
+#banner-5{
+    padding:100px 0 120px;
+
+    background-image:
+        linear-gradient(
+            rgba(15,54,47,.22),
+            rgba(15,54,47,.22)
+        ),
+        url(/images/banner-5.jpg);
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+}
+
+
+.span-head{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding-bottom:55px;
+}
+
+
+.time-for{
+    color:var(--white);
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,.2);
+}
+
+
+.h1-hiking{
+    margin:8px 0 0;
+
+    color:var(--white);
+
+    text-align:center;
+
+    font-family:"Fjalla One","Open Sans",sans-serif;
+
+    font-size:clamp(55px,7vw,82px);
+
+    font-weight:400;
+
+    line-height:1;
+
+    letter-spacing:.04em;
+
+    text-shadow:
+        0 5px 20px rgba(0,0,0,.18);
+}
+
+
+.pics-3{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+
+.coll-1{
+    position:relative;
+
+    width:calc(33.333% - 17px);
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.96);
+
+    border-radius:20px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.18);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.coll-1:hover{
+    transform:translateY(-9px);
+
+    box-shadow:
+        0 28px 60px rgba(0,0,0,.25);
+}
+
+
+.rote{
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+
+.rts{
+    width:100%;
+
+    margin:0;
+
+    padding:11px 12px;
+
+    color:var(--forest);
+
+    background:var(--gold);
+
+    text-align:center;
+
+    font-size:17px;
+
+    font-weight:800;
+
+    letter-spacing:.07em;
+}
+
+
+.img-mounatins{
+    width:100%;
+}
+
+
+.mountain{
+    width:100%;
+
+    height:250px;
+
+    padding:5px;
+
+    object-fit:cover;
+}
+
+
+.route-name{
+    padding:16px 10px 5px;
+
+    color:var(--forest);
+
+    text-align:center;
+
+    font-family:"Abril Fatface",Georgia,serif;
+
+    font-size:21px;
+}
+
+
+.off{
+    display:flex;
+
+    justify-content:center;
+
+    padding:8px 0 20px;
+}
+
+
+.offer{
+    margin:0;
+
+    padding:6px 14px;
+
+    color:var(--white);
+
+    background:var(--terracotta);
+
+    border-radius:50px;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:.08em;
+}
+
+
+/* =========================================================
+   09. STORIES / VIDEO
+   ========================================================= */
+
+#banner-6{
+    padding:100px 0 80px;
+
+    background:var(--cream-light);
+}
+
+
+.main-div2{
+    display:flex;
+
+    justify-content:center;
+}
+
+
+.h-v-p{
+    width:100%;
+}
+
+
+.head-lorem{
+    margin-bottom:25px;
+}
+
+
+.lorem-ip{
+    margin:0;
+
+    color:var(--terracotta);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+}
+
+
+.vid-span{
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:60px;
+}
+
+
+.vid{
+    flex:1 1 58%;
+
+    min-width:0;
+}
+
+
+.vid iframe{
+    display:block;
+
+    width:100%;
+
+    aspect-ratio:16 / 9;
+
+    height:auto;
+
+    border:0;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 20px 50px rgba(13,44,39,.16);
+}
+
+
+.vid-span .head-span{
+    flex:1 1 42%;
+
+    text-align:left;
+}
+
+
+.vid-span .our{
+    text-align:left;
+}
+
+
+.para-hvp{
+    display:flex;
+
+    justify-content:center;
+}
+
+
+.line-3{
+    max-width:800px;
+
+    margin:38px auto 0;
+
+    color:var(--muted);
+
+    text-align:center;
+
+    font-size:15px;
+
+    line-height:1.9;
+}
+
+
+.button2{
+    display:flex;
+
+    justify-content:center;
+}
+
+
+.more{
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    margin-top:30px;
+
+    padding:12px 26px;
+
+    color:var(--white);
+
+    background:var(--forest);
+
+    border:1px solid var(--forest);
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:.1em;
+}
+
+
+.more:hover{
+    color:var(--forest);
+
+    background:var(--gold);
+
+    border-color:var(--gold);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   10. GALLERY
+   ========================================================= */
+
+#banner-7{
+    position:relative;
+
+    padding:95px 0 105px;
+
+    overflow:hidden;
+
+    background-image:url(/images/double-banner.jpg);
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+}
+
+
+#banner-7::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(247,242,232,.72);
+}
+
+
+#banner-7 .container{
+    position:relative;
+
+    z-index:2;
+}
+
+
+.gall{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin-bottom:42px;
+
+    text-align:center;
+}
+
+
+.gall-1{
+    margin:0;
+
+    color:var(--forest);
+
+    font-family:"Abril Fatface",Georgia,serif;
+
+    font-size:44px;
+
+    font-weight:400;
+}
+
+
+.gallery-intro{
+    max-width:650px;
+
+    margin:13px auto 0;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+.pics-main{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:20px;
+}
+
+
+.div-left,
+.mid-dev,
+.right-div{
+    width:33.333%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+
+.uper{
+    overflow:hidden;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 12px 30px rgba(23,63,56,.10);
+}
+
+
+.img-11{
+    width:100%;
+
+    transition:
+        transform .45s ease;
+}
+
+
+.uper:hover .img-11{
+    transform:scale(1.06);
+}
+
+
+.button3{
+    display:flex;
+
+    justify-content:center;
+}
+
+
+.PHOTOS{
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    margin-top:42px;
+
+    padding:12px 27px;
+
+    color:var(--white);
+
+    background:var(--forest);
+
+    border:1px solid var(--forest);
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:.1em;
+}
+
+
+.PHOTOS:hover{
+    color:var(--forest);
+
+    background:var(--gold);
+
+    border-color:var(--gold);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   11. DARK FOOTER
+   ========================================================= */
+
+#sub-footer{
+    padding:80px 0 85px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #202824,
+            #18211e
+        );
+}
+
+
+#sub-footer .logo{
+    margin-bottom:45px;
+}
+
+
+#sub-footer .logo-1{
+    filter:brightness(0) invert(1);
+
+    opacity:.95;
+}
+
+
+.left-right{
+    display:flex;
+
+    gap:65px;
+}
+
+
+.leftside,
+.right-side{
+    width:50%;
+
+    min-width:0;
+}
+
+
+.leftside{
+    padding-right:60px;
+
+    border-right:1px solid rgba(255,255,255,.22);
+}
+
+
+.left{
+    max-width:480px;
+}
+
+
+.copyright{
+    margin:0;
+
+    color:rgba(255,255,255,.67);
+
+    font-size:14px;
+
+    line-height:1.9;
+}
+
+
+.right-side{
+    padding:0;
+}
+
+
+.find{
+    margin:0 0 24px;
+
+    color:var(--white);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+}
+
+
+.iconss{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    gap:10px 18px;
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+}
+
+
+.icons{
+    display:flex;
+
+    align-items:center;
+
+    margin:0;
+
+    padding:0;
+}
+
+
+.social-icons{
+    width:38px;
+    height:38px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    color:var(--white);
+
+    border:1px solid rgba(255,255,255,.28);
+
+    border-radius:50%;
+
+    text-decoration:none;
+}
+
+
+.social-icons:hover{
+    color:var(--forest-dark);
+
+    background:var(--gold);
+
+    border-color:var(--gold);
+
+    transform:translateY(-3px);
+}
+
+
+.s-icons{
+    font-size:14px;
+}
+
+
+.h23{
+    margin:0 0 0 8px;
+
+    color:rgba(255,255,255,.60);
+
+    font-size:12px;
+
+    font-weight:400;
+}
+
+
+.right-down{
+    margin-top:32px;
+}
+
+
+.message{
+    color:rgba(255,255,255,.55);
+
+    font-size:13px;
+}
+
+
+.email{
+    margin:8px 0 0;
+
+    color:var(--white);
+
+    font-size:21px;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   12. BOTTOM FOOTER
+   ========================================================= */
+
+#footer{
+    padding:65px 0;
+
+    background:var(--sage);
+}
+
+
+.main-div-2{
+    display:grid;
+
+    grid-template-columns:1.6fr 1fr 1fr 1fr;
+
+    gap:45px;
+}
+
+
+.left-side{
+    width:auto;
+}
+
+
+.abot,
+.h{
+    margin:0 0 18px;
+
+    color:var(--forest);
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+
+.lore{
+    max-width:360px;
+
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.85;
+}
+
+
+.ul2{
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+}
+
+
+.li2{
+    margin:0 0 10px;
+
+    padding:0;
+
+    list-style:none;
+}
+
+
+.h12{
+    display:inline-block;
+
+    color:var(--muted);
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+.h12:hover{
+    color:var(--terracotta);
+
+    transform:translateX(3px);
+}
+
+
+/* =========================================================
+   13. LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width:1400px){
+
+    #banner .container{
+        width:calc(100% - 120px);
+
+        max-width:1500px;
+    }
+
+
+    .parent-div{
+        gap:100px;
+    }
+
+
+    .main-div{
+        width:465px;
+    }
+
+
+    .heading{
+        font-size:102px;
+    }
+
+
+    .right-div-img{
+        max-width:710px;
+
+        margin-top:-65px;
+    }
+
+
+    .txt{
+        max-width:650px;
+
+        font-size:16px;
+    }
+}
+
+
+/* =========================================================
+   14. LAPTOP
+   ========================================================= */
+
+@media (min-width:769px) and (max-width:1200px){
+
+    .container{
+        width:calc(100% - 55px);
+    }
+
+
+    #header .container{
+        width:calc(100% - 55px);
+    }
+
+
+    .main-head{
+        gap:18px;
+    }
+
+
+    .nav{
+        gap:10px;
+    }
+
+
+    .nev{
+        padding:8px 8px;
+
+        font-size:12px;
+    }
+
+
+    .forms{
+        min-width:125px;
+    }
+
+
+    #banner{
+        padding:110px 0 60px;
+    }
+
+
+    #banner .container{
+        width:calc(100% - 55px);
+    }
+
+
+    .parent-div{
+        gap:35px;
+    }
+
+
+    .heading{
+        font-size:clamp(52px,6vw,75px);
+    }
+
+
+    .wl{
+        font-size:38px;
+    }
+
+
+    .right-div-img{
+        margin-top:-35px;
+    }
+
+
+    .main-div{
+        max-width:390px;
+
+        padding:25px;
+    }
+
+
+    .txt{
+        font-size:14px;
+    }
+
+
+    .left-right{
+        gap:40px;
+    }
+
+
+    .leftside{
+        padding-right:40px;
+    }
+}
+
+
+/* =========================================================
+   15. TABLET
+   ========================================================= */
+
+@media (max-width:900px) and (min-width:641px){
+
+    .columms{
+        gap:18px;
+    }
+
+
+    .columm-1{
+        padding:25px 18px;
+    }
+
+
+    .pics-3{
+        gap:15px;
+    }
+
+
+    .mountain{
+        height:210px;
+    }
+
+
+    .vid-span{
+        gap:30px;
+    }
+
+
+    .main-div-2{
+        gap:25px;
+    }
+}
+
+
+/* =========================================================
+   16. MOBILE
+   ========================================================= */
+
+@media (max-width:640px){
+
+    .container,
+    #header .container,
+    #banner .container{
+        width:calc(100% - 32px);
+    }
+
+
+    /* HEADER */
+
+    #header{
+        padding:18px 0;
+    }
+
+
+    .main-head{
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+
+    .logo-1{
+        max-width:145px;
+    }
+
+
+    .nav{
+        width:100%;
+
+        flex-direction:column;
+
+        gap:9px;
+    }
+
+
+    .nav-a{
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:2px;
+    }
+
+
+    .nev{
+        padding:6px 8px;
+
+        font-size:11px;
+    }
+
+
+    .forms{
+        min-width:150px;
+    }
+
+
+    /* HERO */
+
+    #banner{
+        min-height:100svh;
+
+        padding:210px 0 55px;
+
+        background-position:center center;
+    }
+
+
+    #banner::before{
+        background:
+            linear-gradient(
+                180deg,
+                rgba(9,38,33,.45),
+                rgba(9,38,33,.22) 50%,
+                rgba(9,38,33,.55)
+            );
+    }
+
+
+    .parent-div{
+        min-height:auto;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        gap:40px;
+    }
+
+
+    .right-divs{
+        order:1;
+
+        padding:0;
+    }
+
+
+    .left-div{
+        order:2;
+
+        padding:0;
+    }
+
+
+    .heading{
+        font-size:clamp(47px,14vw,68px);
+
+        white-space:normal;
+    }
+
+
+    .wl{
+        margin-top:12px;
+
+        font-size:32px;
+    }
+
+
+    .right-div-img{
+        max-width:500px;
+
+        margin:-28px auto -18px;
+    }
+
+
+    .rightside-down{
+        width:100%;
+    }
+
+
+    .txt{
+        font-size:13px;
+
+        line-height:1.7;
+    }
+
+
+    .main-div{
+        width:100%;
+
+        max-width:410px;
+
+        padding:23px;
+
+        transform:none;
+    }
+
+
+    .stars{
+        width:120px;
+
+        margin-bottom:17px;
+    }
+
+
+    .left-para{
+        font-size:13px;
+
+        line-height:1.7;
+    }
+
+
+    /* STATISTICS */
+
+    #banner-1{
+        padding:70px 0;
+    }
+
+
+    .routes{
+        font-size:30px;
+    }
+
+
+    .p-banner1{
+        font-size:13px;
+    }
+
+
+    /* LEVELS */
+
+    #banner-2{
+        padding:70px 0 90px;
+    }
+
+
+    .choose{
+        margin-bottom:35px;
+    }
+
+
+    .level{
+        font-size:36px;
+    }
+
+
+    .columms{
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+
+    .columm-1{
+        width:100%;
+
+        max-width:420px;
+
+        padding:28px 23px;
+    }
+
+
+    /* TRAIL */
+
+    #banner-3{
+        padding:70px 0;
+    }
+
+
+    .hike-route{
+        font-size:38px;
+    }
+
+
+    .border{
+        min-height:240px;
+
+        padding:16px;
+    }
+
+
+    .form{
+        width:100%;
+    }
+
+
+    /* JOURNEY */
+
+    #banner-4{
+        padding:70px 0;
+    }
+
+
+    .our{
+        font-size:40px;
+    }
+
+
+    .last2{
+        font-size:14px;
+    }
+
+
+    #banner-4 .headings{
+        flex-wrap:wrap;
+
+        gap:18px 35px;
+    }
+
+
+    /* ROUTES */
+
+    #banner-5{
+        padding:75px 0 90px;
+    }
+
+
+    .span-head{
+        padding-bottom:40px;
+    }
+
+
+    .time-for{
+        font-size:16px;
+    }
+
+
+    .h1-hiking{
+        font-size:55px;
+    }
+
+
+    .pics-3{
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:25px;
+    }
+
+
+    .coll-1{
+        width:100%;
+
+        max-width:370px;
+    }
+
+
+    .mountain{
+        height:235px;
+    }
+
+
+    /* VIDEO */
+
+    #banner-6{
+        padding:70px 0 60px;
+    }
+
+
+    .vid-span{
+        flex-direction:column;
+
+        gap:35px;
+    }
+
+
+    .vid{
+        width:100%;
+    }
+
+
+    .vid-span .head-span{
+        width:100%;
+
+        text-align:center;
+    }
+
+
+    .vid-span .our{
+        text-align:center;
+    }
+
+
+    .line-3{
+        font-size:14px;
+    }
+
+
+    /* GALLERY */
+
+    #banner-7{
+        padding:70px 0 80px;
+    }
+
+
+    .gall-1{
+        font-size:37px;
+    }
+
+
+    .gallery-intro{
+        font-size:13px;
+    }
+
+
+    .pics-main{
+        flex-wrap:wrap;
+
+        gap:12px;
+    }
+
+
+    .div-left,
+    .mid-dev,
+    .right-div{
+        width:calc(50% - 6px);
+
+        gap:12px;
+    }
+
+
+    .uper{
+        border-radius:9px;
+    }
+
+
+    /* DARK FOOTER */
+
+    #sub-footer{
+        padding:60px 0;
+    }
+
+
+    #sub-footer .logo{
+        justify-content:center;
+
+        margin-bottom:35px;
+    }
+
+
+    .left-right{
+        flex-direction:column;
+
+        gap:35px;
+    }
+
+
+    .leftside,
+    .right-side{
+        width:100%;
+    }
+
+
+    .leftside{
+        padding:0 0 30px;
+
+        border-right:0;
+
+        border-bottom:1px solid rgba(255,255,255,.20);
+    }
+
+
+    .left{
+        width:100%;
+    }
+
+
+    .copyright{
+        font-size:13px;
+    }
+
+
+    .iconss{
+        justify-content:flex-start;
+    }
+
+
+    /* BOTTOM FOOTER */
+
+    #footer{
+        padding:55px 0;
+    }
+
+
+    .main-div-2{
+        grid-template-columns:1fr 1fr;
+
+        gap:35px 20px;
+    }
+
+
+    .left-side{
+        grid-column:1 / -1;
+    }
+
+
+    .lore,
+    .h12{
+        font-size:12px;
+    }
+}
+
+
+/* =========================================================
+   17. VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width:400px){
+
+    .container,
+    #header .container,
+    #banner .container{
+        width:calc(100% - 26px);
+    }
+
+
+    #banner{
+        padding-top:195px;
+    }
+
+
+    .nav-a{
+        gap:1px;
+    }
+
+
+    .nev{
+        padding:5px 6px;
+
+        font-size:10px;
+    }
+
+
+    .heading{
+        font-size:46px;
+    }
+
+
+    .wl{
+        font-size:28px;
+    }
+
+
+    .right-div-img{
+        margin:-20px auto -10px;
+    }
+
+
+    .main-div{
+        padding:20px;
+    }
+
+
+    .left-para{
+        font-size:12px;
+    }
+
+
+    .routes{
+        font-size:27px;
+    }
+
+
+    .hike-route{
+        font-size:34px;
+    }
+
+
+    .our{
+        font-size:36px;
+    }
+
+
+    .main-div-2{
+        grid-template-columns:1fr;
+    }
+
+
+    .left-side{
+        grid-column:auto;
+    }
+
+
+    .div-left,
+    .mid-dev,
+    .right-div{
+        width:100%;
+    }
+}
+
+
+/* =========================================================
+   18. ACCESSIBILITY / REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+
+    *,
+    *::before,
+    *::after{
+        transition:none !important;
+
+        animation:none !important;
+    }
+}
